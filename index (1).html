@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SzerencseUt — Legjobb Kaszinó Bónuszok</title>
+    <meta name="description" content="Compare 80+ crypto casinos. Exclusive bonuses. Unbiased ratings.">
+    <meta property="og:title" content="SzerencseUt — Your Edge Starts Here">
+    <meta property="og:description" content="Compare 80+ crypto casinos. Exclusive bonuses. Unbiased ratings.">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQZGCZPK3Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FQZGCZPK3Y');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg-base: #080B0F;
+        --bg-surface: #0E1318;
+        --bg-elevated: #141C24;
+        --accent-green: #00FF87;
+        --accent-green-dim: #00C96A;
+        --accent-gold: #FFD166;
+        --accent-red: #FF4757;
+        --text-primary: #F0F4F8;
+        --text-secondary: #8A9BB0;
+        --text-muted: #3D5166;
+        --border-subtle: #1A2535;
+        --border-glow: rgba(0,255,135,0.3);
+        --gradient-hero: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,255,135,0.12) 0%, transparent 70%);
+        --gradient-gold: linear-gradient(135deg, #FFD166, #FF9F43);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+        font-family: 'Outfit', sans-serif;
+        background: var(--bg-base);
+        color: var(--text-primary);
+        overflow-x: hidden;
+    }
+    @keyframes grain {
+        0%,100% { transform: translate(0,0); }
+        10% { transform: translate(-2%,-1%); }
+        30% { transform: translate(2%,1%); }
+        50% { transform: translate(-1%,2%); }
+        70% { transform: translate(1%,-2%); }
+        90% { transform: translate(-2%,1%); }
+    }
+    @keyframes float {
+        0%,100% { transform: translateY(0px); opacity: 0.6; }
+        50% { transform: translateY(-20px); opacity: 1; }
+    }
+    @keyframes pulse-red {
+        0%,100% { opacity:1; transform:scale(1); }
+        50% { opacity:0.6; transform:scale(1.3); }
+    }
+    @keyframes countUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes slideIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+</style>
+<style>
+    /* NAVBAR */
+    nav {
+        position: fixed; top:0; left:0; right:0; z-index:1000;
+        background: rgba(8,11,15,0.85);
+        backdrop-filter: blur(20px);
+        padding: 0 clamp(1rem,4vw,2rem);
+        height: 64px;
+        display: flex; align-items: center; justify-content: space-between;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s;
+    }
+    nav.scrolled { border-bottom: 1px solid rgba(0,255,135,0.15); }
+    .nav-logo {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.2rem; font-weight: 700;
+        color: var(--text-primary); text-decoration: none;
+        display: flex; align-items: center; gap: 8px;
+    }
+    .nav-logo span { color: var(--accent-green); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent-green); }
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+    .live-badge { display: flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-secondary); }
+    .live-dot { width:8px; height:8px; background: var(--accent-red); border-radius:50%; animation: pulse-red 1.5s infinite; }
+    .btn { padding: 8px 20px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; text-decoration: none; transition: all 0.2s; border: none; }
+    .btn-primary { background: var(--accent-green); color: #000; }
+    .btn-primary:hover { background: var(--accent-green-dim); box-shadow: 0 0 20px 4px rgba(0,255,135,0.3); }
+    .btn-ghost { background: transparent; color: var(--accent-green); border: 1px solid var(--accent-green); }
+    .btn-ghost:hover { background: rgba(0,255,135,0.08); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width:22px; height:2px; background: var(--text-primary); border-radius:2px; transition:all 0.3s; display:block; }
+    .mobile-menu { display:none; position:fixed; top:64px; left:0; right:0; bottom:0; background:var(--bg-base); z-index:999; padding:2rem; flex-direction:column; gap:1.5rem; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { color:var(--text-primary); text-decoration:none; font-size:1.5rem; font-weight:700; font-family:'Space Mono',monospace; animation: slideIn 0.3s both; }
+    @media(max-width:768px){ .nav-links,.nav-right { display:none; } .hamburger { display:flex; } }
+</style>
+<style>
+    /* HERO */
+    .hero {
+        min-height: 100vh;
+        background: var(--bg-base);
+        position: relative;
+        display: flex; flex-direction:column; align-items:center; justify-content:center;
+        text-align:center; padding: 100px clamp(1rem,4vw,2rem) 60px;
+        overflow: hidden;
+    }
+    .hero::before {
+        content:''; position:absolute; inset:0;
+        background: var(--gradient-hero); pointer-events:none;
+    }
+    .grain {
+        position:absolute; inset:-50%;
+        width:200%; height:200%;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        animation: grain 8s steps(2) infinite;
+        pointer-events:none; z-index:0;
+    }
+    .particle { position:absolute; border-radius:50%; background:var(--accent-green); pointer-events:none; }
+    .hero-content { position:relative; z-index:1; max-width:900px; }
+    .hero h1 {
+        font-family: 'Outfit', sans-serif;
+        font-size: clamp(3rem,7vw,6rem);
+        font-weight:700; line-height:1.05;
+        text-transform:uppercase; letter-spacing:-0.02em;
+        margin-bottom:1.5rem;
+    }
+    .hero h1 .glow { color:var(--accent-green); text-shadow: 0 0 40px var(--accent-green), 0 0 80px rgba(0,255,135,0.3); }
+    .hero-sub { font-size:1.1rem; color:var(--text-secondary); max-width:600px; margin:0 auto 2.5rem; line-height:1.7; }
+    .hero-ctas { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.5rem; }
+    .hero-ctas .btn { padding:14px 32px; font-size:1rem; border-radius:8px; }
+    .trust-strip { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; }
+    .trust-item { display:flex; align-items:center; gap:6px; font-size:0.8rem; color:var(--text-secondary); }
+    .trust-item span { color:var(--accent-green); font-weight:700; }
+    .scroll-indicator { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); animation:bounce 2s infinite; color:var(--text-muted); font-size:1.5rem; }
+    /* STATS STRIP */
+    .stats-strip {
+        background: var(--bg-elevated);
+        border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);
+        padding:2rem clamp(1rem,4vw,2rem);
+        display:flex; justify-content:center; gap:clamp(2rem,5vw,6rem); flex-wrap:wrap;
+    }
+    .stat { text-align:center; }
+    .stat-num { font-family:'JetBrains Mono',monospace; font-size:clamp(1.8rem,3vw,2.5rem); font-weight:700; color:var(--accent-green); }
+    .stat-label { font-size:0.85rem; color:var(--text-secondary); margin-top:4px; }
+</style>
+<style>
+    /* FEATURED BANNER */
+    .featured-banner {
+        max-width:1320px; margin:3rem auto; padding:0 clamp(1rem,4vw,2rem);
+    }
+    .featured-card {
+        background: linear-gradient(135deg, rgba(14,19,24,0.95), rgba(20,28,36,0.9));
+        border:1px solid var(--border-glow);
+        border-radius:16px; padding:2rem;
+        display:flex; align-items:center; gap:2rem; flex-wrap:wrap;
+        box-shadow: 0 0 40px rgba(0,255,135,0.08);
+        position:relative; overflow:hidden;
+    }
+    .featured-card::before {
+        content:''; position:absolute; inset:0;
+        background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.01) 10px, rgba(255,255,255,0.01) 20px);
+        pointer-events:none;
+    }
+    .featured-logo { width:80px; height:80px; background:var(--bg-elevated); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:2rem; flex-shrink:0; position:relative; z-index:1; }
+    .featured-info { flex:1; min-width:200px; position:relative; z-index:1; }
+    .editor-badge { display:inline-block; background:var(--gradient-gold); color:#000; font-size:0.7rem; font-weight:700; padding:3px 10px; border-radius:999px; margin-bottom:8px; text-transform:uppercase; letter-spacing:1px; }
+    .featured-info h2 { font-family:'Space Mono',monospace; font-size:1.4rem; margin-bottom:4px; }
+    .featured-info p { color:var(--text-secondary); font-size:0.9rem; margin-bottom:12px; }
+    .stars { color:var(--accent-gold); font-size:1rem; letter-spacing:2px; }
+    .featured-bonus { text-align:center; flex-shrink:0; position:relative; z-index:1; }
+    .bonus-amount { font-family:'JetBrains Mono',monospace; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:700; color:var(--accent-green); }
+    .bonus-sub { font-size:0.75rem; color:var(--text-muted); margin-bottom:1rem; }
+    .featured-bonus .btn { padding:14px 32px; font-size:1rem; display:block; }
+    /* FILTER BAR */
+    .filter-bar {
+        position:sticky; top:64px; z-index:900;
+        background:rgba(8,11,15,0.95); backdrop-filter:blur(20px);
+        border-bottom:1px solid var(--border-subtle);
+        padding:1rem clamp(1rem,4vw,2rem);
+        display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+    }
+    .filter-tabs { display:flex; gap:0.25rem; }
+    .filter-tab {
+        padding:6px 16px; border-radius:999px; font-size:0.85rem; font-weight:600;
+        cursor:pointer; border:none; background:transparent; color:var(--text-secondary);
+        transition:all 0.2s;
+    }
+    .filter-tab.active { background:rgba(0,255,135,0.1); color:var(--accent-green); border:1px solid rgba(0,255,135,0.3); }
+    .filter-tab:hover:not(.active) { color:var(--text-primary); background:var(--bg-elevated); }
+    .filter-right { display:flex; gap:0.75rem; align-items:center; }
+    .search-input {
+        background:var(--bg-elevated); border:1px solid var(--border-subtle);
+        border-radius:8px; padding:6px 14px; color:var(--text-primary);
+        font-size:0.85rem; font-family:'DM Sans',sans-serif; width:180px;
+        outline:none; transition:border-color 0.2s;
+    }
+    .search-input:focus { border-color:var(--border-glow); }
+    .sort-select {
+        background:var(--bg-elevated); border:1px solid var(--border-subtle);
+        border-radius:8px; padding:6px 14px; color:var(--text-secondary);
+        font-size:0.85rem; cursor:pointer; outline:none;
+    }
+</style>
+<style>
+    /* CASINO GRID & CARDS */
+    .casino-section { max-width:1320px; margin:0 auto; padding:3rem clamp(1rem,4vw,2rem); }
+    .section-title { font-family:'Space Mono',monospace; font-size:clamp(1.8rem,3vw,2.8rem); margin-bottom:2rem; }
+    .casino-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:1.5rem; }
+    .casino-card {
+        background:var(--bg-surface); border:1px solid var(--border-subtle);
+        border-radius:16px; padding:1.5rem; position:relative;
+        transition:all 0.3s ease; animation: slideIn 0.4s both;
+        overflow:hidden;
+    }
+    .casino-card:hover { border-color:rgba(0,255,135,0.4); box-shadow:0 0 30px rgba(0,255,135,0.08); transform:translateY(-4px); }
+    .card-rank { position:absolute; bottom:1rem; right:1.2rem; font-family:'JetBrains Mono',monospace; font-size:3rem; font-weight:700; color:var(--text-muted); opacity:0.15; line-height:1; pointer-events:none; }
+    .card-badges { display:flex; gap:6px; margin-bottom:1rem; min-height:24px; }
+    .badge { font-size:0.65rem; font-weight:700; padding:3px 10px; border-radius:999px; text-transform:uppercase; letter-spacing:1px; }
+    .badge-exclusive { background:var(--gradient-gold); color:#000; }
+    .badge-new { background:rgba(0,255,135,0.15); color:var(--accent-green); border:1px solid rgba(0,255,135,0.3); }
+    .badge-hot { background:rgba(255,71,87,0.15); color:var(--accent-red); border:1px solid rgba(255,71,87,0.3); display:flex; align-items:center; gap:4px; }
+    .badge-hot-dot { width:6px; height:6px; background:var(--accent-red); border-radius:50%; animation:pulse-red 1.5s infinite; }
+    .badge-vip { background:linear-gradient(135deg,rgba(147,51,234,0.3),rgba(79,70,229,0.3)); color:#c084fc; border:1px solid rgba(147,51,234,0.3); }
+    .badge-crypto { background:rgba(249,115,22,0.15); color:#fb923c; border:1px solid rgba(249,115,22,0.3); }
+    .card-header { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
+    .casino-logo { width:56px; height:56px; background:var(--bg-elevated); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.8rem; flex-shrink:0; }
+    .casino-meta { flex:1; }
+    .casino-name { font-weight:700; font-size:1.05rem; margin-bottom:2px; }
+    .casino-rating { display:flex; align-items:center; gap:6px; }
+    .stars-small { color:var(--accent-gold); font-size:0.8rem; }
+    .rating-num { font-family:'JetBrains Mono',monospace; font-size:0.85rem; color:var(--accent-green); }
+    .divider { height:1px; background:var(--border-subtle); margin:1rem 0; }
+    .bonus-label { font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
+    .bonus-main { font-family:'JetBrains Mono',monospace; font-size:1.4rem; font-weight:700; color:var(--accent-green); margin-bottom:8px; }
+    .progress-bar { height:6px; background:var(--bg-elevated); border-radius:999px; overflow:hidden; margin-bottom:4px; }
+    .progress-fill { height:100%; background:linear-gradient(90deg,var(--accent-green),var(--accent-green-dim)); border-radius:999px; }
+    .progress-label { font-size:0.75rem; color:var(--text-secondary); }
+    .feature-chips { display:flex; gap:6px; flex-wrap:wrap; margin:1rem 0; }
+    .chip { background:var(--bg-elevated); color:var(--text-secondary); font-size:0.7rem; padding:3px 10px; border-radius:999px; }
+    .card-actions { display:flex; gap:0.75rem; margin-top:1rem; }
+    .btn-claim { flex:1; background:var(--accent-green); color:#000; font-weight:800; font-size:0.85rem; padding:12px; border-radius:8px; border:none; cursor:pointer; text-transform:uppercase; letter-spacing:1px; transition:all 0.2s; text-decoration:none; text-align:center; display:block; }
+    .btn-claim:hover { background:var(--accent-green-dim); box-shadow:0 0 20px 4px rgba(0,255,135,0.3); }
+    .btn-review { background:transparent; color:var(--text-secondary); font-size:0.8rem; padding:12px 16px; border-radius:8px; border:1px solid var(--border-subtle); cursor:pointer; transition:all 0.2s; text-decoration:none; text-align:center; white-space:nowrap; }
+    .btn-review:hover { border-color:var(--text-secondary); color:var(--text-primary); }
+    .card-tnc { font-size:0.7rem; color:var(--text-muted); margin-top:8px; text-align:center; }
+    /* LOAD MORE */
+    .load-more { text-align:center; margin:2rem 0; }
+    .btn-load { background:transparent; border:1px solid var(--border-subtle); color:var(--text-secondary); padding:14px 40px; border-radius:8px; font-size:0.9rem; cursor:pointer; transition:all 0.2s; }
+    .btn-load:hover { border-color:var(--accent-green); color:var(--accent-green); }
+</style>
+<style>
+    /* TRUST SECTION */
+    .trust-section { background:var(--bg-elevated); padding:5rem clamp(1rem,4vw,2rem); }
+    .trust-section h2 { font-family:'Space Mono',monospace; font-size:clamp(1.8rem,3vw,2.8rem); text-align:center; margin-bottom:3rem; }
+    .trust-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; max-width:1320px; margin:0 auto; }
+    .trust-card { background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:16px; padding:2rem; }
+    .trust-icon { font-size:2.5rem; margin-bottom:1rem; }
+    .trust-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:0.75rem; color:var(--accent-green); }
+    .trust-card p { color:var(--text-secondary); line-height:1.7; font-size:0.9rem; }
+    /* BONUS CATEGORIES */
+    .bonus-cats { padding:4rem clamp(1rem,4vw,2rem); max-width:1320px; margin:0 auto; }
+    .bonus-cats h2 { font-family:'Space Mono',monospace; font-size:1.8rem; margin-bottom:1.5rem; }
+    .cats-scroll { display:flex; gap:1rem; overflow-x:auto; padding-bottom:1rem; }
+    .cats-scroll::-webkit-scrollbar { height:4px; }
+    .cats-scroll::-webkit-scrollbar-track { background:var(--bg-elevated); }
+    .cats-scroll::-webkit-scrollbar-thumb { background:var(--border-subtle); border-radius:2px; }
+    .cat-card { background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:12px; padding:1.5rem; min-width:180px; cursor:pointer; transition:all 0.2s; flex-shrink:0; text-align:center; }
+    .cat-card:hover { border-color:var(--border-glow); transform:translateY(-2px); }
+    .cat-icon { font-size:2rem; margin-bottom:0.5rem; }
+    .cat-name { font-weight:600; font-size:0.9rem; margin-bottom:4px; }
+    .cat-count { font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--accent-green); }
+    /* FOOTER */
+    footer { background:var(--bg-surface); border-top:1px solid var(--border-subtle); padding:4rem clamp(1rem,4vw,2rem) 2rem; }
+    .footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:3rem; max-width:1320px; margin:0 auto 3rem; }
+    .footer-logo { font-family:'Space Mono',monospace; font-size:1.2rem; font-weight:700; color:var(--text-primary); margin-bottom:0.75rem; }
+    .footer-logo span { color:var(--accent-green); }
+    .footer-tagline { color:var(--text-muted); font-size:0.85rem; line-height:1.6; }
+    .footer-col h4 { font-size:0.8rem; text-transform:uppercase; letter-spacing:2px; color:var(--text-muted); margin-bottom:1rem; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:0.5rem; }
+    .footer-col a { color:var(--text-secondary); text-decoration:none; font-size:0.85rem; transition:color 0.2s; }
+    .footer-col a:hover { color:var(--accent-green); }
+    .footer-bottom { border-top:1px solid var(--border-subtle); padding-top:1.5rem; text-align:center; color:var(--text-muted); font-size:0.75rem; line-height:1.8; max-width:1320px; margin:0 auto; }
+    .responsible-bar { position:fixed; bottom:0; left:0; right:0; background:rgba(8,11,15,0.95); border-top:1px solid var(--border-subtle); padding:8px 1rem; text-align:center; font-size:0.75rem; color:var(--text-muted); z-index:999; display:flex; align-items:center; justify-content:center; gap:1rem; }
+    .responsible-bar a { color:var(--text-secondary); text-decoration:none; }
+    .responsible-bar a:hover { color:var(--accent-green); }
+    @media(max-width:640px){ .casino-grid{grid-template-columns:1fr;} .filter-tabs{overflow-x:auto; padding-bottom:4px;} .filter-tab{white-space:nowrap;} .featured-card{flex-direction:column;} }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+    <a href="#" class="nav-logo">⬡ SZERENCSE<span>UT</span></a>
+    <ul class="nav-links">
+        <li><a href="#casinos">Casinos</a></li>
+        <li><a href="#bonuses">Bonuses</a></li>
+        <li><a href="#crypto">Crypto</a></li>
+        <li><a href="#trust">Reviews</a></li>
+        <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="nav-right">
+        <div class="live-badge">
+            <div class="live-dot"></div>
+            <span id="live-count">247</span> players online
+        </div>
+        <a href="#casinos" class="btn btn-primary">Best Bonus →</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+    <a href="#casinos" onclick="toggleMenu()">Casinos</a>
+    <a href="#bonuses" onclick="toggleMenu()">Bonuses</a>
+    <a href="#crypto" onclick="toggleMenu()">Crypto</a>
+    <a href="#trust" onclick="toggleMenu()">Reviews</a>
+    <a href="#" onclick="toggleMenu()">Blog</a>
+    <a href="#casinos" class="btn btn-primary" onclick="toggleMenu()" style="text-align:center;margin-top:1rem;">Best Bonus →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="grain"></div>
+    <div id="particles"></div>
+    <div class="hero-content">
+        <h1>A LEGJOBB <span class="glow">KASZINÓK</span><br>ITT.</h1>
+        <p class="hero-sub">Hasonlítsd össze a legjobb online kaszinókat. Exkluzív bónuszok. Elfogulatlan értékelések.</p>
+        <div class="hero-ctas">
+            <a href="#casinos" class="btn btn-primary">Explore Casinos</a>
+            <a href="#trust" class="btn btn-ghost">How We Rate</a>
+        </div>
+        <div class="trust-strip">
+            <div class="trust-item"><span>✓</span> Licensed Only</div>
+            <div class="trust-item"><span>✓</span> Crypto Friendly</div>
+            <div class="trust-item"><span>✓</span> Fast Payouts</div>
+            <div class="trust-item"><span>✓</span> 24/7 Support</div>
+            <div class="trust-item"><span>✓</span> Provably Fair</div>
+        </div>
+    </div>
+    <div class="scroll-indicator">↓</div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+    <div class="stat"><div class="stat-num" data-target="80" data-suffix="+">0</div><div class="stat-label">Casinos Reviewed</div></div>
+    <div class="stat"><div class="stat-num" data-target="18500" data-prefix="$" data-suffix="">0</div><div class="stat-label">Max Bonus Listed Today</div></div>
+    <div class="stat"><div class="stat-num" data-target="48" data-suffix="★">0</div><div class="stat-label">Average Rating</div></div>
+    <div class="stat"><div class="stat-num" data-target="12400" data-suffix="+">0</div><div class="stat-label">Monthly Readers</div></div>
+</div>
+
+<!-- FEATURED BANNER -->
+<div class="featured-banner">
+    <div class="featured-card">
+        <div class="featured-logo" id="featured-logo-box" style="overflow:hidden;"></div>
+        <div class="featured-info">
+            <div class="editor-badge">#1 Editor's Choice</div>
+            <h2>Celsius Casino</h2>
+            <p>Magyarország legjobb online kaszinója. Üdvözlő bónusz, cashback és ingyenes pörgetések minden új játékosnak.</p>
+            <div class="casino-rating">
+                <span class="stars">★★★★★</span>
+                <span style="font-family:'JetBrains Mono',monospace;color:var(--accent-green);font-size:0.9rem;">4.9</span>
+                <span style="color:var(--text-muted);font-size:0.8rem;">(2,847 reviews)</span>
+            </div>
+        </div>
+        <div class="featured-bonus">
+            <div class="bonus-amount">500$</div>
+            <div style="font-family:'JetBrains Mono',monospace;color:var(--accent-green);font-size:0.9rem;">+ 100 FREE SPINS</div>
+            <div class="bonus-sub">150% match · min $20 · 40x wagering</div>
+            <a href="https://celsius.games/RwyJGFKtYM" target="_blank" rel="noopener" class="btn btn-primary" style="display:block;padding:14px 32px;font-size:1rem;text-align:center;margin-top:1rem;" onclick="trackClick('celsius','featured')">CLAIM BONUS →</a>
+            <div style="font-size:0.7rem;color:var(--text-muted);margin-top:6px;">T&C Apply | 18+</div>
+        </div>
+    </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar" id="filter-bar">
+    <div class="filter-tabs">
+        <button class="filter-tab active" onclick="filterCasinos('all',this)">All</button>
+        <button class="filter-tab" onclick="filterCasinos('crypto',this)">Crypto</button>
+        <button class="filter-tab" onclick="filterCasinos('live',this)">Live Casino</button>
+        <button class="filter-tab" onclick="filterCasinos('sports',this)">Sports</button>
+        <button class="filter-tab" onclick="filterCasinos('new',this)">New</button>
+        <button class="filter-tab" onclick="filterCasinos('vip',this)">VIP</button>
+    </div>
+    <div class="filter-right">
+        <input type="text" class="search-input" placeholder="🔍 Search casinos..." oninput="searchCasinos(this.value)">
+        <select class="sort-select" onchange="sortCasinos(this.value)">
+            <option value="top-rated">Top Rated</option>
+            <option value="biggest-bonus">Biggest Bonus</option>
+            <option value="newest">Newest</option>
+        </select>
+    </div>
+</div>
+
+<!-- CASINO GRID -->
+<section class="casino-section" id="casinos">
+    <h2 class="section-title">Top Casinos This Month</h2>
+    <div class="casino-grid" id="casino-grid"></div>
+    <div class="load-more">
+        <button class="btn-load" onclick="loadMore()">Show More Casinos ↓</button>
+    </div>
+</section>
+
+<!-- TRUST SECTION -->
+<section class="trust-section" id="trust">
+    <h2>Why 40,000+ Players Trust SzerencseUt</h2>
+    <div class="trust-grid">
+        <div class="trust-card">
+            <div class="trust-icon">🔍</div>
+            <h3>Expert Reviews</h3>
+            <p>Every casino is tested by our team of gambling experts. We play with real money, test every payment method, and contact support before publishing any review.</p>
+        </div>
+        <div class="trust-card">
+            <div class="trust-icon">🔒</div>
+            <h3>100% Independent</h3>
+            <p>No casino pays to appear on our list. Rankings are based purely on our scoring methodology — game selection, bonuses, payout speed, and licensing.</p>
+        </div>
+        <div class="trust-card">
+            <div class="trust-icon">⚡</div>
+            <h3>Updated Daily</h3>
+            <p>Our team monitors bonus changes, license updates, and user complaints daily. Every rating reflects current conditions, not outdated data.</p>
+        </div>
+    </div>
+</section>
+
+<!-- BONUS CATEGORIES -->
+<section class="bonus-cats" id="bonuses">
+    <h2>Browse by Bonus Type</h2>
+    <div class="cats-scroll">
+        <div class="cat-card"><div class="cat-icon">🎁</div><div class="cat-name">No Deposit</div><div class="cat-count">24 offers</div></div>
+        <div class="cat-card"><div class="cat-icon">🎰</div><div class="cat-name">Free Spins</div><div class="cat-count">48 offers</div></div>
+        <div class="cat-card"><div class="cat-icon">₿</div><div class="cat-name">Crypto Bonuses</div><div class="cat-count">36 offers</div></div>
+        <div class="cat-card"><div class="cat-icon">👑</div><div class="cat-name">VIP Programs</div><div class="cat-count">18 offers</div></div>
+        <div class="cat-card"><div class="cat-icon">🃏</div><div class="cat-name">Live Casino</div><div class="cat-count">22 offers</div></div>
+        <div class="cat-card"><div class="cat-icon">⚽</div><div class="cat-name">Sports Betting</div><div class="cat-count">15 offers</div></div>
+        <div class="cat-card"><div class="cat-icon">💰</div><div class="cat-name">Cashback</div><div class="cat-count">31 offers</div></div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">⬡ SZERENCSE<span>UT</span></div>
+            <p class="footer-tagline">The sharpest casino comparisons on the internet. We help players find the best bonuses, safest casinos, and biggest wins.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Top Casinos</a></li>
+                <li><a href="#">Best Bonuses</a></li>
+                <li><a href="#">Crypto Casinos</a></li>
+                <li><a href="#">New Casinos</a></li>
+                <li><a href="#">Casino Reviews</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Categories</h4>
+            <ul>
+                <li><a href="#">No Deposit Bonuses</a></li>
+                <li><a href="#">Free Spins</a></li>
+                <li><a href="#">VIP Programs</a></li>
+                <li><a href="#">Live Casino</a></li>
+                <li><a href="#">Sports Betting</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Responsible Gambling</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 SzerencseUt. All rights reserved. This website contains affiliate links. We may earn a commission when you click through and make a deposit.</p>
+        <p style="margin-top:6px;">Gambling involves risk. Never gamble more than you can afford to lose. If gambling is affecting your life, visit <a href="https://www.begambleaware.org">BeGambleAware.org</a> or <a href="https://www.gamcare.org.uk">GamCare.org.uk</a></p>
+        <p style="margin-top:6px;">🔞 18+ Only | GamCare | BeGambleAware | GamStop</p>
+    </div>
+</footer>
+
+<!-- RESPONSIBLE GAMBLING BAR -->
+<div class="responsible-bar">
+    <span>🔞 18+ Only</span>
+    <span>|</span>
+    <span>Gamble Responsibly</span>
+    <span>|</span>
+    <a href="https://www.begambleaware.org" target="_blank">BeGambleAware.org</a>
+    <span>|</span>
+    <a href="https://www.gamcare.org.uk" target="_blank">GamCare</a>
+</div>
+
+<script>
+const casinos = [{"id":"stake","name":"Celsius Casino","logo":"🎰","logoImg":"data:image/webp;base64,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","rating":4.9,"reviews":2847,"established":2020,"bonus":"500$ + 100 FS","matchPercent":150,"maxAmount":500,"freeSpins":100,"wagering":"40X","minDeposit":20,"features":"Bitcoin, Instant Pay, Provably Fair, VPN OK","gameCount":3000,"badges":["exclusive","hot","crypto","vip"],"affiliateUrl":"https://celsius.games/RwyJGFKtYM"},{"id":"bitstarz","name":"LOOKING FOR PARTNERS","logo":"⭐","logoImg":"","rating":0,"reviews":0,"established":2020,"bonus":"","matchPercent":0,"maxAmount":0,"freeSpins":0,"wagering":"","minDeposit":0,"features":"","gameCount":0,"badges":[],"affiliateUrl":"#"},{"id":"bc-game","name":"LOOKING FOR PARTNERS","logo":"🎲","logoImg":"","rating":0,"reviews":0,"established":2020,"bonus":"","matchPercent":0,"maxAmount":0,"freeSpins":0,"wagering":"","minDeposit":0,"features":"","gameCount":0,"badges":[],"affiliateUrl":"#"}];
+
+let visibleCount = 6;
+let activeFilter = 'all';
+let searchQuery = '';
+let sortMode = 'top-rated';
+
+function renderCards() {
+    const grid = document.getElementById('casino-grid');
+    let filtered = casinos.filter(c => {
+        if (!c.bonus && !c.rating) return false; // skip empty partner slots
+        // category may not exist if exported from admin — fall back gracefully
+        const cats = Array.isArray(c.category) ? c.category : [];
+        const badges = Array.isArray(c.badges) ? c.badges : [];
+        const matchCat = activeFilter === 'all' || cats.includes(activeFilter) || (activeFilter === 'new' && badges.includes('new'));
+        const matchSearch = (c.name || '').toLowerCase().includes(searchQuery.toLowerCase());
+        return matchCat && matchSearch;
+    });
+    if (sortMode === 'biggest-bonus') filtered.sort((a,b) => (b.maxAmount||0) - (a.maxAmount||0));
+    else if (sortMode === 'newest') filtered.sort((a,b) => (b.established||0) - (a.established||0));
+    else filtered.sort((a,b) => (b.rating||0) - (a.rating||0));
+
+    grid.innerHTML = '';
+    filtered.slice(0, visibleCount).forEach((c, i) => {
+        const rating = c.rating || 0;
+        const badges = Array.isArray(c.badges) ? c.badges : [];
+        // features can be array or comma-separated string
+        const featArr = Array.isArray(c.features)
+            ? c.features
+            : (c.features || '').split(',').map(f => f.trim()).filter(Boolean);
+        const stars = '★'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '½' : '');
+        const badgeHtml = badges.map(b => {
+            if (b==='exclusive') return `<span class="badge badge-exclusive">EXCLUSIVE</span>`;
+            if (b==='new') return `<span class="badge badge-new">NEW</span>`;
+            if (b==='hot') return `<span class="badge badge-hot"><span class="badge-hot-dot"></span>HOT</span>`;
+            if (b==='vip') return `<span class="badge badge-vip">VIP</span>`;
+            if (b==='crypto') return `<span class="badge badge-crypto">CRYPTO</span>`;
+            return '';
+        }).join('');
+        const chipHtml = featArr.map(f => `<span class="chip">${f}</span>`).join('');
+        const fillWidth = Math.min((c.matchPercent||0) / 3, 100);
+        const card = document.createElement('div');
+        card.className = 'casino-card';
+        card.style.animationDelay = `${i * 80}ms`;
+        const logoHtml = c.logoImg ? `<img src="${c.logoImg}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;" alt="${c.name}">` : c.logo;
+        card.innerHTML = `
+            <div class="card-badges">${badgeHtml}</div>
+            <div class="card-header">
+                <div class="casino-logo">${logoHtml}</div>
+                <div class="casino-meta">
+                    <div class="casino-name">${c.name}</div>
+                    <div class="casino-rating">
+                        <span class="stars-small">${stars}</span>
+                        <span class="rating-num">${c.rating}</span>
+                        <span style="color:var(--text-muted);font-size:0.75rem;">(${(c.reviews||0).toLocaleString()})</span>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="bonus-label">💰 Welcome Bonus</div>
+            <div class="bonus-main">${c.bonus || c.bonusHeadline || ''}</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:${fillWidth}%"></div></div>
+            <div class="progress-label">${c.matchPercent}% match · ${c.wagering} wagering · min $${c.minDeposit}</div>
+            <div class="feature-chips">${chipHtml}</div>
+            <div style="color:var(--text-muted);font-size:0.8rem;margin-bottom:0.75rem;">🎮 ${(c.gameCount||0).toLocaleString()}+ Games</div>
+            <div class="card-actions">
+                <a href="${c.affiliateUrl}" target="_blank" rel="noopener" class="btn-claim" onclick="trackClick('${c.id}','card')">CLAIM BONUS →</a>
+            </div>
+            <div class="card-tnc">T&C Apply | 18+ | Gamble Responsibly</div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+function filterCasinos(cat, btn) {
+    activeFilter = cat;
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    visibleCount = 6;
+    renderCards();
+}
+
+function searchCasinos(q) { searchQuery = q; visibleCount = 6; renderCards(); }
+function sortCasinos(v) { sortMode = v; renderCards(); }
+function loadMore() { visibleCount += 3; renderCards(); }
+function trackClick(id, src) { console.log('Casino click:', id, 'from:', src); }
+function toggleMenu() { document.getElementById('mobile-menu').classList.toggle('open'); }
+
+// Navbar scroll
+window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// Animated counters
+function animateCounters() {
+    document.querySelectorAll('.stat-num[data-target]').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        let current = 0;
+        const step = target / 60;
+        const timer = setInterval(() => {
+            current = Math.min(current + step, target);
+            if (suffix === '★') {
+                el.textContent = prefix + (current/10).toFixed(1) + suffix;
+            } else {
+                el.textContent = prefix + Math.floor(current).toLocaleString() + suffix;
+            }
+            if (current >= target) clearInterval(timer);
+        }, 25);
+    });
+}
+
+// Intersection observer for counters
+const statsObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) { animateCounters(); statsObserver.disconnect(); } });
+}, { threshold: 0.5 });
+const statsEl = document.querySelector('.stats-strip');
+if (statsEl) statsObserver.observe(statsEl);
+
+// Particles
+function createParticles() {
+    const container = document.getElementById('particles');
+    for (let i = 0; i < 12; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = Math.random() * 4 + 2;
+        p.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;top:${Math.random()*100}%;opacity:${Math.random()*0.4+0.1};animation:float ${Math.random()*4+4}s ease-in-out ${Math.random()*4}s infinite;`;
+        container.appendChild(p);
+    }
+}
+
+// Live counter animation
+function animateLiveCount() {
+    const el = document.getElementById('live-count');
+    setInterval(() => {
+        const base = 247;
+        el.textContent = base + Math.floor(Math.random() * 20 - 10);
+    }, 3000);
+}
+
+// Populate featured banner logo from casino data
+function initFeaturedLogo() {
+    const celsius = casinos.find(c => c.id === 'stake');
+    const box = document.getElementById('featured-logo-box');
+    if (celsius && box) {
+        if (celsius.logoImg) {
+            box.innerHTML = `<img src="${celsius.logoImg}" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" alt="Celsius Casino">`;
+        } else {
+            box.innerHTML = celsius.logo || '🎰';
+        }
+    }
+}
+
+// Init
+createParticles();
+animateLiveCount();
+renderCards();
+initFeaturedLogo();
+</script>
+</body>
+</html>
